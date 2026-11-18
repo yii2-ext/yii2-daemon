@@ -1,5 +1,5 @@
 {
-  "name": "yarcode/yii2-daemon",
+  "name": "yii2-ext/yii2-daemon",
   "description": "Yii2 daemon based on ReactPHP",
   "type": "yii2-extension",
   "keywords": [
@@ -7,7 +7,7 @@
     "daemon",
     "reactphp"
   ],
-  "homepage": "http://packagist.org/packages/yarcode/yii2-daemon",
+  "homepage": "https://packagist.org/packages/yii2-ext/yii2-daemon",
   "license": "MIT",
   "authors": [
     {
@@ -17,16 +17,38 @@
     }
   ],
   "support": {
-    "issues": "https://github.com/yarcode/yii2-daemon/issues",
-    "source": "https://github.com/yarcode/yii2-daemon"
+    "issues": "https://github.com/yii2-ext/yii2-daemon/issues",
+    "source": "https://github.com/yii2-ext/yii2-daemon"
   },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
   "require": {
-    "yiisoft/yii2": "~2",
-    "react/react": "^0.4.2"
+    "php": "^8.1",
+    "react/event-loop": "^1.6",
+    "yiisoft/yii2": "^2.0.45"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^2.3",
+    "phpunit/phpunit": "^10.5"
   },
   "autoload": {
     "psr-4": {
-      "YarCode\\Yii2\\Daemon\\": "./src"
+      "YarCode\\Yii2\\Daemon\\": "src/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "YarCode\\Yii2\\Daemon\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    },
+    "sort-packages": true
   }
 }
